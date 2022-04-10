@@ -1,0 +1,8 @@
+{
+  "name": "Ace Coins",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "38d783f1"
+}
