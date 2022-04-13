@@ -1,8 +1,8 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, 
     IonLabel, IonButton, IonIcon, IonButtons ,
     IonRow, IonCol, IonGrid, IonItem, 
-    IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCardSubtitle, IonList , IonBackButton, IonListHeader, IonAvatar
-  
+    IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCardSubtitle, IonList , IonBackButton, IonListHeader, IonAvatar,
+    IonInput, IonRouterLink
   } from '@ionic/react';
   
 import './pageSignup.css';
@@ -29,17 +29,61 @@ const PageSignup = () => {
 
                     <IonButtons slot="end">
                         <IonButton>
-                        <IonIcon icon={notifications} />
+                        
                         </IonButton>
                     </IonButtons>
                 </IonToolbar>
             </IonHeader>
 
+            
             <IonContent>
-
-                Signup
-
-            </IonContent>
+            <IonRow className='ion-padding'>
+                    <IonCol className='ion-text-center ion-padding'>
+                        <IonIcon
+                        style={{ fontSize: "70px", color: "#0040ff" }}
+                        
+                        />
+                    </IonCol>
+                </IonRow>
+                <IonRow className='ion-text-center ion-padding'>
+                    <IonCol>
+                    <IonItem>
+                            <IonLabel position="floating"> First Name</IonLabel>
+                            <IonInput  type="text"></IonInput>
+                        </IonItem>
+                        <IonItem>
+                            <IonLabel position="floating"> Last Name</IonLabel>
+                            <IonInput  type="text"></IonInput>
+                        </IonItem>
+                        <IonItem>
+                            <IonLabel position="floating"> Phone Number</IonLabel>
+                            <IonInput  type="text"></IonInput>
+                        </IonItem>
+                        <IonItem>
+                            <IonLabel position="floating"> Email</IonLabel>
+                            <IonInput  type="email"></IonInput>
+                        </IonItem>
+                        <IonItem>
+                            <IonLabel position="floating"> Password</IonLabel>
+                            <IonInput  type="password"></IonInput>
+                        </IonItem>
+                        <IonItem>
+                            <IonLabel position="floating"> Confirm Password</IonLabel>
+                            <IonInput  type="password"></IonInput>
+                        </IonItem>
+                        
+                    </IonCol>
+                    
+                    <IonCol>
+                    
+                        <IonRouterLink routerLink='./pageSignup'>
+                            <IonCol size="11">
+                                <IonButton expand="block">Signup</IonButton> 
+                            </IonCol>
+						</IonRouterLink>
+                    </IonCol>
+                </IonRow>
+                </IonContent>
 		</IonPage>
 	);
 };

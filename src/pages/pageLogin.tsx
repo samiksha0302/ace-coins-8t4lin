@@ -14,6 +14,7 @@ import { useParams } from 'react-router';
 
 import { home , receipt , wallet , planet, notifications, trendingUp, trendingDown, person  } from 'ionicons/icons';
 import PageSignup from './pageSignup';
+import { monitorEventLoopDelay } from 'perf_hooks';
 
 const PageLogin = () => {
 
