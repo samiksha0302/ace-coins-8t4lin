@@ -37,14 +37,14 @@ const PageSignup = () => {
 
             
             <IonContent>
-            <IonRow className='ion-padding'>
+                <IonRow className='ion-padding'>
                     <IonCol className='ion-text-center ion-padding'>
                         <IonIcon
                         style={{ fontSize: "70px", color: "#0040ff" }}
-                        
                         />
                     </IonCol>
                 </IonRow>
+
                 <IonRow className='ion-text-center ion-padding'>
                     <IonCol>
                     <IonItem>
@@ -73,15 +73,14 @@ const PageSignup = () => {
                         </IonItem>
                         
                     </IonCol>
-                    
-                    <IonCol>
-                    
-                        <IonRouterLink routerLink='./pageSignup'>
+                </IonRow>
+                <IonRow>
+                    <IonRouterLink routerLink='./pageSignup'>
                             <IonCol size="11">
                                 <IonButton expand="block">Signup</IonButton> 
                             </IonCol>
 						</IonRouterLink>
-                    </IonCol>
+
                 </IonRow>
                 </IonContent>
 		</IonPage>
