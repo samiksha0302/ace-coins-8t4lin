@@ -1,20 +1,10 @@
-import { Redirect, Route } from 'react-router-dom';
-import {
-  IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
-  setupIonicReact
-} from '@ionic/react';
+import { Route } from 'react-router-dom';
+import { IonApp, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { home , receipt , wallet , person  } from 'ionicons/icons';
-import Tab1 from './pages/tab1Home';
-import Tab2 from './pages/tab2Transaction';
-import Tab3 from './pages/tab3Wallet';
-import Tab4 from './pages/tab4Account';
+
+import PageLogin from './pages/pageLogin';
+import PageSignup from './pages/pageSignup';
+import PageVerification from './pages/pageVerification';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,13 +25,11 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import AppTab from './components/AppTab';
-import PageLogin from './pages/pageLogin';
-import PageSignup from './pages/pageSignup';
-import PageVerification from './pages/pageVerification';
 
 setupIonicReact();
 
 const App: React.FC = () => (
+
   <IonApp>
     <IonReactRouter>
       <Route path="/" component={AppTab} />

@@ -1,14 +1,12 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, 
   IonLabel, IonButton, IonIcon, IonButtons ,
   IonRow, IonCol, IonGrid, IonItem, 
-  IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCardSubtitle, IonList , IonBackButton, IonListHeader, IonAvatar
-
+  IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonList , IonAvatar, IonRouterLink
 } from '@ionic/react';
 
-import ExploreContainer from '../components/ExploreContainer';
+import { planet, notifications, trendingUp, trendingDown  } from 'ionicons/icons';
+import { Graph } from '../components/TaskGraph';
 import './tab1Home.css';
-
-import { home , receipt , wallet , planet, notifications, trendingUp, trendingDown  } from 'ionicons/icons';
 
 const Tab1: React.FC = () => {
 
@@ -34,37 +32,27 @@ const Tab1: React.FC = () => {
       </IonHeader>
 
       <IonContent>
-
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-
         <IonGrid>
           <IonRow>
             <IonCol>
               <IonCard>
                 <IonCardHeader>
-                  <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-                  <IonCardTitle>Card Title</IonCardTitle>
+                  <IonCardTitle>Transaction Graph</IonCardTitle>
                 </IonCardHeader>
-                <IonItem>
-                  <IonIcon icon={home} slot="start" />
-                  <IonLabel>Recent Transactions</IonLabel>
-                  <IonButton fill="outline" slot="end">View</IonButton>
-                </IonItem>
                 <IonCardContent>
-                  This is content, without any paragraph or header tags,
-                  within an ion-cardContent element.
+                  <IonList><Graph props={undefined}></Graph></IonList>
+                  <IonItem>
+                    <IonLabel slot="end">Updated Every 1 Min</IonLabel>
+                  </IonItem>
                 </IonCardContent>
+                
               </IonCard>
             </IonCol>
 
             <IonCol>
               <IonCard>
                   <IonCardHeader>
-                    <IonCardTitle>Recent Transaction</IonCardTitle>
+                    <IonCardTitle>Transaction List</IonCardTitle>
                   </IonCardHeader>
                   <IonCardContent>
                     <IonList>
@@ -107,7 +95,9 @@ const Tab1: React.FC = () => {
                     </IonList>
                   </IonCardContent>
                   <IonItem>
-                    <IonButton fill="solid" color="primary" slot="end" size="default">View all</IonButton>
+                    <IonRouterLink routerLink='tab2Transaction'>
+                      <IonButton expand="block">View All</IonButton>
+                    </IonRouterLink>
                   </IonItem>
                 </IonCard>
             </IonCol>
