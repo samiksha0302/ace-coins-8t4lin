@@ -4,11 +4,20 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
   IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonList , IonAvatar, IonRouterLink
 } from '@ionic/react';
 
-import { planet, notifications, trendingUp, trendingDown  } from 'ionicons/icons';
+import { planet, notifications, trendingUp, trendingDown, exit  } from 'ionicons/icons';
 import { Graph } from '../components/TaskGraph';
 import './tab1Home.css';
 
 const Tab1: React.FC = () => {
+
+  const logout = () => {
+    window.localStorage.clear();
+    window.location.href = "/";
+  }
+
+  const refresh = () => {
+    window.location.href = "/";
+  }
 
   return (
     <IonPage>
@@ -24,8 +33,8 @@ const Tab1: React.FC = () => {
           <IonTitle>Ace Coins</IonTitle>
 
           <IonButtons slot="end">
-            <IonButton>
-              <IonIcon icon={notifications} />
+            <IonButton onClick={logout}>
+              <IonLabel>Logout</IonLabel>&nbsp;<IonIcon icon={exit} />
             </IonButton>
           </IonButtons>
         </IonToolbar>
@@ -37,12 +46,13 @@ const Tab1: React.FC = () => {
             <IonCol>
               <IonCard>
                 <IonCardHeader>
-                  <IonCardTitle>Transaction Graph</IonCardTitle>
+                  <IonCardTitle onClick={logout}>Transaction Graph</IonCardTitle>
                 </IonCardHeader>
                 <IonCardContent>
                   <IonList><Graph props={undefined}></Graph></IonList>
                   <IonItem>
-                    <IonLabel slot="end">Updated Every 1 Min</IonLabel>
+                    <IonButton slot="start" onClick={refresh}>Refresh</IonButton>
+                    <IonLabel slot="end">Refresh to Update</IonLabel>
                   </IonItem>
                 </IonCardContent>
                 

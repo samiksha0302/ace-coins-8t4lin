@@ -224,7 +224,7 @@ class PageSignup extends React.Component <Props & RouteComponentProps<any>, Stat
                         <IonRow className='ion-padding'>
                             <IonCol>
                                     <IonButton expand="block" onClick={this.register}>Signup</IonButton>
-
+                                    <h2 className='ion-text-center'>OR</h2>
                                     <IonRouterLink routerLink='./pageLogin'>
                                         <IonButton expand="block">Login</IonButton>
                                     </IonRouterLink>

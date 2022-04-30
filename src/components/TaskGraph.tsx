@@ -17,7 +17,7 @@ class Graph extends React.Component<Props, State> {
     let rand3 =  min + (Math.random() * (max-min));
     let rand4 =  min + (Math.random() * (max-min));
     let rand5 =  min + (Math.random() * (max-min));
-    let url1 = 'https://quickchart.io/chart/render/zm-9f5817bf-f10d-4055-9b4f-3d7b2db5d49c?';
+    let url1 = 'https://quickchart.io/chart/render/zm-a053adf2-9f31-41f6-8a31-171686ac6088?';
     let url2 = url1 + 'data1='+rand1+','+rand2+','+rand3+','+rand4+','+rand5+''; 
     let ImgUrl = url2;
     this.setState({ImgFinal:ImgUrl});

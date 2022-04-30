@@ -1,14 +1,20 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
-IonAvatar, IonIcon, IonButtons
+IonAvatar, IonIcon, IonButtons, IonLabel
 } from '@ionic/react';
 
 import React from 'react';
 import { IonButton,IonList } from '@ionic/react';
-import { planet, notifications } from 'ionicons/icons';
+import { planet, notifications, exit } from 'ionicons/icons';
 import { Transaction } from '../components/TaskTransaction';
 import './tab2Transaction.css';
 
 const Tab2: React.FC = () => {
+
+  const logout = () => {
+    window.localStorage.clear();
+    window.location.href = "/";
+  }
+
   return (
     <IonPage>
       <IonHeader>
@@ -22,8 +28,8 @@ const Tab2: React.FC = () => {
           <IonTitle>Ace Coins</IonTitle>
 
           <IonButtons slot="end">
-            <IonButton>
-              <IonIcon icon={notifications} />
+            <IonButton onClick={logout}>
+              <IonLabel>Logout</IonLabel>&nbsp;<IonIcon icon={exit} />
             </IonButton>
           </IonButtons>
         </IonToolbar>

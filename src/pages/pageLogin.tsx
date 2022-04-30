@@ -23,14 +23,9 @@ class PageLogin extends React.Component <Props & RouteComponentProps<any>, State
             password: '',
             toastState: false,
             toastMessage: 'Message'
-        };           
-
-        this.event = new CustomEvent('loggedIn', {detail: false});
-        
+        };
         localStorage.setItem("isLoggedIn", "false");
     }
-
-    event: Event;
 
     //Code to Update the Input Components with the values.
     updatePassword = (event: any) => {
@@ -47,9 +42,6 @@ class PageLogin extends React.Component <Props & RouteComponentProps<any>, State
     }
 
     clearCredentials(){
-        this.event = new CustomEvent('loggedIn', {detail: false});
-        window.dispatchEvent(this.event);
-
         localStorage.removeItem("id");       
         localStorage.removeItem("status");
         localStorage.removeItem("message");
@@ -84,16 +76,11 @@ class PageLogin extends React.Component <Props & RouteComponentProps<any>, State
         })
 
         .then((result) => {
-                
             localStorage.setItem("status",result.status);
             localStorage.setItem("message",result.message);
             localStorage.setItem("id",result.id);        
             localStorage.setItem("isLoggedIn", "true");
-            
-            this.event = new CustomEvent('loggedIn', {detail: true});
-        
-            window.dispatchEvent(this.event);
-            this.props.history.replace('/');
+            window.location.href = "/";
         },
 
         (error) => {
@@ -150,7 +137,7 @@ class PageLogin extends React.Component <Props & RouteComponentProps<any>, State
                         <IonRow className='ion-padding'>
                             <IonCol>
                                     <IonButton expand="block" onClick={this.login}>Login</IonButton>
-
+                                    <h2 className='ion-text-center'>OR</h2>
                                     <IonRouterLink routerLink='./pageSignup'>
                                         <IonButton expand="block">Signup</IonButton>
                                     </IonRouterLink>

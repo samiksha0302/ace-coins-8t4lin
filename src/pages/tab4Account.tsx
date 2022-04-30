@@ -3,10 +3,15 @@ IonItem, IonLabel, IonInput, IonButton, IonAvatar, IonCard, IonCardContent, IonB
 
 import './tab4Account.css';
 import React, { useState } from 'react';
-import { notifications, planet } from 'ionicons/icons';
+import { exit, notifications, planet } from 'ionicons/icons';
 import { Profile } from '../components/TaskProfile';
 
 const Tab4: React.FC = () => {
+
+  const logout = () => {
+    window.localStorage.clear();
+    window.location.href = "/";
+  }
 
   const [text, setText] = useState<string>();
 
@@ -23,8 +28,8 @@ const Tab4: React.FC = () => {
           <IonTitle>Ace Coins</IonTitle>
 
           <IonButtons slot="end">
-            <IonButton>
-              <IonIcon icon={notifications} />
+            <IonButton onClick={logout}>
+              <IonLabel>Logout</IonLabel>&nbsp;<IonIcon icon={exit} />
             </IonButton>
           </IonButtons>
         </IonToolbar>

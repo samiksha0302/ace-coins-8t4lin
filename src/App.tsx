@@ -4,7 +4,6 @@ import { IonReactRouter } from '@ionic/react-router';
 
 import PageLogin from './pages/pageLogin';
 import PageSignup from './pages/pageSignup';
-import PageVerification from './pages/pageVerification';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -28,14 +27,21 @@ import AppTab from './components/AppTab';
 
 setupIonicReact();
 
+let Auth = false
+
+if(localStorage.getItem('isLoggedIn') === 'true'){
+  Auth = true
+}else{
+  Auth = false
+}
+
 const App: React.FC = () => (
 
   <IonApp>
     <IonReactRouter>
-      <Route path="/" component={AppTab} />
+      <Route path="/" component={Auth ? AppTab : PageLogin} />
       <Route path="/pageLogin" component={PageLogin} exact={true} />
       <Route path="/pageSignup" component={PageSignup} exact={true} />
-      <Route path="/pageVerification" component={PageVerification} exact={true} />
     </IonReactRouter>
   </IonApp>
 );
