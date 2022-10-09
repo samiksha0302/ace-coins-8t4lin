@@ -124,7 +124,7 @@ class PageLogin extends React.Component <Props & RouteComponentProps<any>, State
                         <IonRow className='ion-padding'>
                             <IonCol>
                                 <IonItem>
-                                    <IonLabel position="floating"> Email</IonLabel>
+                                    <IonLabel position="floating"> Email:</IonLabel>
                                     <IonInput  onIonChange={this.updateEmail} type="email" placeholder="Email"></IonInput>
                                 </IonItem>
                                 <IonItem>
