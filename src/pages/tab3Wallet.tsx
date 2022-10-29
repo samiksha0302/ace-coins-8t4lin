@@ -1,4 +1,4 @@
-import { IonButtons, IonCard, IonCardHeader, IonCardTitle, IonContent,
+import { IonButtons, IonCard, IonCardHeader, IonCardTitle, IonCol, IonContent,
 IonHeader, IonLabel, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 import {   IonAvatar, IonIcon} from '@ionic/react';
@@ -6,7 +6,9 @@ import { planet, notifications, exit } from 'ionicons/icons';
 import { IonButton} from '@ionic/react';
 import { CoinBuy } from '../components/TaskCoinBuy';
 import { CoinSell } from '../components/TaskCoinSell';
+
 import './tab3Wallet.css';
+import { Balance } from '../components/TaskBalance';
 
 const Tab3: React.FC = () => {
 
@@ -37,11 +39,21 @@ const Tab3: React.FC = () => {
       <IonContent fullscreen>
           <IonCard>
             <IonCardHeader>
-              <IonCardTitle>Wallet Balance: 50</IonCardTitle>
+              <Balance props={undefined}></Balance>
             </IonCardHeader>
           </IonCard>             
         <CoinBuy props={undefined}></CoinBuy>
         <CoinSell props={undefined}></CoinSell>
+        <IonCard>
+        <IonCardHeader>
+              <IonCardTitle>Ecommerce</IonCardTitle>
+            </IonCardHeader>
+            </IonCard>
+            <IonButton shape="round" expand="block" fill="outline" >
+          <IonCol>
+        <a href="https://anikets240802.pythonanywhere.com/" >Visit our store</a>
+        </IonCol>
+       </IonButton>
       </IonContent>
     </IonPage>
   );
